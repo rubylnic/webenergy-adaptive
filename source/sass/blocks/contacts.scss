@@ -1,0 +1,168 @@
+.contacts {
+  margin-top: 21px;
+}
+
+.contacts__tel {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  color: $black;
+
+  text-decoration: none;
+  &:hover,&:focus {
+    color: $orange;
+  }
+}
+
+.contacts__p {
+  margin: 0;
+  margin-bottom: 2px;
+
+  font-size: 13px;
+}
+
+.contacts__messenger {
+  position: relative;
+
+  margin: 0;
+  padding-left: 43px;
+
+  font-size: 13px;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    background: url("../img/whatsapp.png") 0 0 no-repeat;
+
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 20px;
+
+    width: 18px;
+    height: 18px;
+
+    background: url("../img/viber.png") 0 0 no-repeat;
+
+    content: "";
+  }
+}
+
+.contacts__mail {
+  color: #4673ab;
+  &:hover,&:focus {
+    color: $orange;
+  }
+}
+
+.contacts__skype {
+  display: none;
+  @media(max-width: 1139px) {
+    position: relative;
+
+    display: block;
+
+    margin: 0;
+    padding-left: 22px;
+
+    font-size: 13px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 18px;
+      height: 18px;
+
+      background: url("../img/skype.png") 0 0 no-repeat;
+
+      content: "";
+    }
+  }
+}
+
+.contacts__messenger--m {
+  display: none;
+}
+
+@media (max-width: 1139px) {
+  .contacts {
+    margin-top: 8px;
+  }
+}
+
+@include media-tablet {
+  .contacts {
+    margin-right: 45px;
+
+    text-align: right;
+  }
+  .contacts__messenger:before {
+    left: 38%;
+  }
+  .contacts__messenger:after {
+    left: 28%;
+  }
+  .contacts__skype:before {
+    left: 53%;
+  }
+}
+
+@include media-mobile {
+  .contacts {
+    width: 100%;
+    margin-top: 0;
+
+    @include flex;
+    justify-content: space-between;
+  }
+  .contacts__p {
+    display: none;
+  }
+  .contacts__tel {
+    font-size: 17px;
+  }
+  .contacts__container:last-of-type {
+    width: 90px;
+
+    @include flex;
+    justify-content: flex-end;
+  }
+  .contacts__mail {
+    margin-bottom: 8px;
+
+    order: 0;
+  }
+  .contacts__skype {
+    padding-left: 20px;
+
+    order: 1;
+  }
+  .contacts__messenger {
+    &::before {
+      background: url("../img/viber.png") 0 0 no-repeat;
+    }
+    &::after {
+      background: url("../img/whatsapp.png") 0 0 no-repeat;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  .contacts__messenger--m {
+    display: block;
+  }
+  .contacts__messenger--d {
+    display: none;
+  }
+}

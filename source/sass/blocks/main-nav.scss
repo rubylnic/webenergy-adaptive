@@ -1,0 +1,213 @@
+.main-nav {
+  background: url("../img/bg.jpg") no-repeat 0 0;
+}
+
+.main-nav__list {
+  margin: 0 auto;
+  padding: 13px 0;
+  padding-left: 15px;
+
+  list-style: none;
+
+  @include flex;
+  flex-wrap: wrap;
+}
+
+.main-nav__item {
+  position: relative;
+
+  padding: 0 24px;
+
+  border-right: $white dotted 1px;
+
+  cursor: pointer;
+  &:first-of-type {
+    position: relative;
+
+    padding-right: 40px;
+    padding-left: 0;
+    &:before {
+      position: absolute;
+      top: 3px;
+      right: 20px;
+
+      width: 10px;
+      height: 10px;
+
+      background: url("../img/orange-arrow.svg") 0 0 no-repeat;
+
+      content: "";
+    }
+  }
+  &:nth-of-type(2) {
+    position: relative;
+
+    padding-right: 40px;
+    &:before {
+      position: absolute;
+      top: 3px;
+      right: 20px;
+
+      width: 10px;
+      height: 10px;
+
+      background: url("../img/orange-arrow.svg") 0 0 no-repeat;
+
+      content: "";
+    }
+  }
+  &:last-of-type {
+    padding-right: 0;
+
+    border: none;
+  }
+}
+
+.main-nav__link {
+  color: $white;
+
+  text-decoration: none;
+  &:hover,&:focus {
+    color: $orange;
+  }
+}
+
+.main-nav__button {
+  display: none;
+}
+
+.main-nav__catalog {
+  position: absolute;
+  z-index: 10;
+  top: 28px;
+  left: -14px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  &--hidden {
+    display: none;
+  }
+
+  &--animation {
+    animation: 2s fadeIn;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.main-nav__catalog-item {
+  width: 200px;
+  padding: 20px 0;
+
+  color: $white;
+  border-bottom: 1px solid $white;
+  background-color: #040d0d;
+
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+@media (max-width: 1139px) {
+  .main-nav {
+    z-index: 10;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+
+    background-color: #040d0d;
+
+    text-align: center;
+  }
+  .main-nav__button {
+    display: inline-block;
+
+    width: 80px;
+    padding: 12px 0;
+
+    color: $white;
+    border: none;
+    background: url("../img/burger.svg") 0 center no-repeat;
+
+    cursor: pointer;
+    text-align: right;
+    &:hover,&:focus {
+      opacity: 0.7;
+    }
+    &--cross {
+      background: none;
+    }
+  }
+  .main-nav__button--cross {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 17px;
+      left: 0;
+
+      width: 30px;
+      height: 3px;
+
+      background-color: $orange;
+
+      content: "";
+      transform: rotate(45deg);
+    }
+    &::after {
+      position: absolute;
+      top: 17px;
+      left: 0;
+
+      width: 30px;
+      height: 3px;
+
+      background-color: $orange;
+
+      content: "";
+      transform: rotate(-45deg);
+    }
+  }
+  .main-nav__list {
+    max-width: 100%;
+    padding: 0;
+  }
+  .main-nav__list--closed {
+    display: none;
+  }
+  .main-nav__item {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid $white;
+
+    text-align: center;
+    &::before {
+      display: none;
+    }
+    &:first-of-type {
+      padding-right: 0;
+
+      border-top: 1px solid $white;
+    }
+    &:nth-of-type(2) {
+      padding-right: 0;
+    }
+  }
+}

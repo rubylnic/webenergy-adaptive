@@ -1,0 +1,303 @@
+.new {
+  position: relative;
+
+  padding-bottom: 47px;
+}
+
+.new__container {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new__container .new__controls {
+  display: none;
+}
+
+.new__controls-btn-left {
+  position: absolute;
+  z-index: 3;
+  top: 52%;
+  left: 0;
+
+  width: 20px;
+  height: 45px;
+
+  border: none;
+  background: url("../img/arrow-slider.png") 0 0 no-repeat;
+
+  cursor: pointer;
+  transform: rotate(180deg);
+  &:hover,&:active {
+    opacity: 0.7;
+  }
+}
+
+.new__controls-btn-right {
+  position: absolute;
+  z-index: 3;
+  top: 52%;
+  right: 0;
+
+  width: 20px;
+  height: 45px;
+
+  border: none;
+  background: url("../img/arrow-slider.png") 0 0 no-repeat;
+
+  cursor: pointer;
+  &:hover,&:active {
+    opacity: 0.7;
+  }
+}
+
+.new__h {
+  padding: 45px 0 23px 0;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: $black;
+
+  text-transform: uppercase;
+  &:before {
+    position: absolute;
+    top: 70px;
+    left: 114px;
+
+    width: calc(100% - 200px);
+    height: 1px;
+
+    background-color: #dbdee6;
+
+    content: "";
+  }
+}
+
+.new__link {
+  padding-top: 15px;
+
+  color: $blue;
+}
+
+.new__list {
+  position: relative;
+
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.new__item {
+  position: relative;
+
+  display: flex;
+
+  box-sizing: border-box;
+  min-width: 232px;
+  margin-right: 31px;
+  padding: 36px 21px 20px 21px;
+
+  border: solid 1px #f6f7f9;
+  border-radius: 10px;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &:hover,&:active {
+    border-color: $orange;
+  }
+  &::before {
+    position: absolute;
+    top: -4px;
+    left: 10px;
+
+    width: 34px;
+    height: 45px;
+
+    background: url("../img/flag-new.png") 0 0 no-repeat;
+
+    content: "";
+  }
+}
+
+.new__heading {
+  display: block;
+
+  width: 85%;
+  margin-bottom: 25px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: $blue;
+  &:hover,&:active {
+    color: $orange;
+  }
+}
+
+.new picture {
+  min-height: 190px;
+  margin-bottom: 2px;
+}
+
+.new__price {
+  margin-bottom: 18px;
+}
+
+.new__price-now {
+  font-size: 20px;
+  font-weight: 600;
+
+  color: $black;
+}
+
+.new__price-before {
+  color: $orange;
+
+  text-decoration: line-through;
+}
+
+.new__buy {
+  width: 110px;
+  padding: 10px 0;
+  padding-left: 20px;
+
+  font-weight: 500;
+
+  color: $white;
+  border: none;
+  border-bottom: solid 2px #c44817;
+  border-radius: 7px;
+  background-color: $orange;
+  background-image: url("../img/cart-btn.png");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+
+  cursor: pointer;
+  text-transform: uppercase;
+  &:hover,&:active {
+    border-color: #365884;
+    background-color: #4673ab;
+  }
+}
+
+.new__more {
+  color: $blue;
+  &:hover,&:focus {
+    color: $orange;
+  }
+}
+
+.new .swiper-container {
+  width: 1024px;
+  padding-top: 5px;
+}
+
+@media (max-width: 1140px) {
+  .new__controls {
+    display: none;
+  }
+  .new__link {
+    display: none;
+  }
+  .new__container .new__controls {
+    display: block;
+
+    padding-top: 22px;
+  }
+  .new__container .new__controls-btn-left {
+    position: initial;
+
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+
+    background: url("../img/arrow-slider-m.png") 0 0 no-repeat;
+
+    transform: rotate(360deg);
+    &:hover,&:focus {
+      background: url("../img/arrow-slider-m-active.png") 0 0 no-repeat;
+
+      transform: rotate(180deg);
+    }
+  }
+  .new__container .new__controls-btn-right {
+    position: initial;
+
+    width: 30px;
+    height: 30px;
+
+    background: url("../img/arrow-slider-m.png") 0 0 no-repeat;
+
+    transform: rotate(180deg);
+    &:hover,&:focus {
+      background: url("../img/arrow-slider-m-active.png") 0 0 no-repeat;
+
+      transform: rotate(360deg);
+    }
+  }
+  .new__h {
+    &::before {
+      left: 160px;
+
+      width: calc(100% - 250px);
+    }
+    &::after {
+      position: absolute;
+      top: 58px;
+      left: 124px;
+
+      width: 16px;
+      height: 25px;
+
+      background: url("../img/arrow-heading.png") 0 0 no-repeat;
+
+      content: "";
+    }
+  }
+}
+
+@include media-desktop {
+  .new__list {
+    padding: 0;
+  }
+  .new .swiper-container {
+    width: 948px;
+  }
+  .new__item {
+    min-width: 213px;
+    padding: 33px 13px 23px;
+  }
+}
+
+@include media-tablet {
+  .new .new__item {
+    min-width: 213px;
+    padding: 33px 13px 23px;
+  }
+  .new .swiper-container {
+    width: 720px;
+  }
+}
+
+@include media-mobile {
+  .new .swiper-container {
+    width: 282px;
+  }
+  .new .new__item {
+    min-width: 282px;
+    padding: 33px 35px;
+  }
+  .new__buy {
+    margin-right: 10px;
+  }
+}

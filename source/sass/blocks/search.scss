@@ -1,0 +1,90 @@
+.search {
+  padding-top: 22px;
+}
+
+.search__p {
+  position: relative;
+
+  margin: 0;
+  margin-bottom: 10px;
+  padding-left: 32px;
+
+  font-size: 18px;
+  span {
+    &:first-of-type {
+      display: block;
+
+      width: 100%;
+
+      font-weight: 500;
+      font-style: italic;
+
+      color: $orange;
+
+      text-transform: uppercase;
+    }
+    &:last-of-type {
+      font-weight: 300;
+      font-style: italic;
+
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+    }
+  }
+  &::before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: 30px;
+    height: 30px;
+
+    background: url("../img/rouble.svg") 0 0 no-repeat;
+
+    content: "";
+  }
+}
+
+.search__input {
+  width: 167px;
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #eff0f4;
+}
+
+.search__container {
+  display: flex;
+
+  width: 228px;
+
+  border-radius: 5px;
+  background-color: #eff0f4;
+
+  align-items: center;
+  button {
+    position: relative;
+    right: 5px;
+
+    height: 26px;
+    padding: 6px 10px;
+
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    background-color: $orange;
+
+    cursor: pointer;
+    &:hover,&:focus {
+      color: $orange;
+      background-color: $white;
+    }
+  }
+}
+
+@media (max-width: 1139px) {
+  .search {
+    display: none;
+  }
+}

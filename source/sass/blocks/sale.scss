@@ -1,0 +1,162 @@
+.sale__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sale__item {
+  position: relative;
+
+  font-size: 15px;
+  &--phone {
+    width: 200px;
+    padding-left: 55px;
+  }
+  &--tick {
+    width: 133px;
+  }
+  &--car {
+    width: 91px;
+  }
+  &--wallet {
+    width: 207px;
+    &::after {
+      display: none;
+    }
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -45px;
+
+    width: 36px;
+    height: 36px;
+
+    content: "";
+  }
+  &::after {
+    position: absolute;
+    top: 10px;
+    right: -75px;
+
+    width: 45px;
+    height: 11px;
+
+    background: url("../img/arrow-tab.png") 0 0 no-repeat;
+
+    content: "";
+  }
+  &--phone::before {
+    left: 0;
+
+    background: url("../img/orange-phone.png") 0 0 no-repeat;
+  }
+  &--tick::before {
+    background: url("../img/orange-tick.png") 0 0 no-repeat;
+  }
+  &--car::before {
+    left: -55px;
+
+    width: 50px;
+
+    background: url("../img/orange-car.png") 0 0 no-repeat;
+  }
+  &--wallet::before {
+    background: url("../img/orange-wallet.png") 0 0 no-repeat;
+  }
+  span {
+    margin-right: 5px;
+
+    font-weight: 600;
+  }
+}
+
+@include media-desktop {
+  .sale__item::after {
+    top: 17px;
+    right: -47px;
+  }
+}
+
+@include media-tablet {
+  .sale__list {
+    padding: 40px 0;
+  }
+  .sale__item {
+    &::after {
+      right: -57px;
+    }
+    &--phone {
+      width: 142px;
+      padding-left: 0;
+      &::before {
+        top: -50px;
+        left: 60px;
+      }
+    }
+    &--tick::before {
+      top: -50px;
+      left: 50px;
+    }
+    &--car::before {
+      top: -50px;
+      left: 19px;
+    }
+    &--wallet {
+      width: 120px;
+      &::before {
+        top: -50px;
+        left: 19px;
+      }
+    }
+  }
+}
+
+@include media-mobile {
+  .sale__item {
+    margin-top: 35px;
+    margin-bottom: 55px;
+    &:nth-of-type(2n)::after {
+      display: none;
+    }
+    &::after {
+      top: -38px;
+      right: -40%;
+      @media (max-width: 350px) {
+        right: -20%;
+      }
+    }
+    &--phone {
+      width: 142px;
+      padding-left: 0;
+      &::before {
+        top: -50px;
+        left: 60px;
+      }
+    }
+    &--tick::before {
+      top: -50px;
+      left: 50px;
+    }
+    &--car {
+      width: 148px;
+      &::before {
+        top: -50px;
+        left: 50px;
+      }
+    }
+    &--wallet {
+      width: 120px;
+      &::before {
+        top: -50px;
+        left: 40px;
+      }
+    }
+  }
+}
